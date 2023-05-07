@@ -1,0 +1,24 @@
+
+/* Define the font family */
+ 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Define custom classes for each font weight */
+.font-ubuntu-regular {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400; /* Set the font weight to regular */
+}
+.font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700; /* Set the font weight to bold */
+  }  
+
+.font-ubuntu-medium {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500; /* Set the font weight to medium */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
