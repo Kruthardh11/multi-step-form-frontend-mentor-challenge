@@ -103,7 +103,7 @@ const Steptwo = ({formData, setFormData}) => {
               aria-label="Example button"
           >
             <img  className='p-4' src={advancedImg} />
-            <p className='pt-10 px-4 pb-1 font-ubuntu font-bold text-blue-800' onClick={setData2}>Advanced</p>
+            <p className='pt-10 px-4 pb-1 font-ubuntu font-bold text-blue-800' >Advanced</p>
             <p className='px-4 text-gray-400 '>{ isToggled ?   "$120/year" : "$12/mo"}</p>
             {isToggled && <p className='px-2 text-gray-400 '>2 months free</p>}
           </div>
@@ -140,6 +140,7 @@ const Steptwo = ({formData, setFormData}) => {
         Yearly
         </div>
         </div>
+        <button onClick={setData2} className='bg-blue-800 rounded-full py-2 px-4 text-white mt-5'>Confirm</button>
     </div>
     </div>
   )

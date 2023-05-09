@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import sideBar from '../images/bg-sidebar-desktop.svg';
 
 
 
-const Stepthree = () => {
+const Stepthree = ({formData, setFormData}) => {
+
+  const handleAddosChange = (event) => {
+    const checked = event.target.checked;
+    const value = checked ? 1 : "";
+    setFormData({ ...formData, addos: value });
+  };
+
+  const handleAddlsChange = (event) => {
+    const checked = event.target.checked;
+    const value = checked ? 2 : "";
+    setFormData({ ...formData, addls: value });
+  };
+
+  const handleAddcpChange = (event) => {
+    const checked = event.target.checked;
+    const value = checked ? 2 : "";
+    setFormData({ ...formData, addcp: value });
+  };
+
+  console.log(formData)
+
+
   return (
     <div className='grid grid-cols-2'>
       <div className='relative grid grid-cols-1'>
@@ -44,7 +66,7 @@ const Stepthree = () => {
        
             <div className="grid grid-cols-3 ">
   <div className="flex items-center justify-center border-l border-t border-b border-blue-900 rounded-sm mb-4">
-    <input type="checkbox" className="mr-2" />
+    <input type="checkbox" className="mr-2" onChange={handleAddosChange}  />
    
   </div>
   <div className="flex items-center justify-center  border-t border-b border-blue-900 rounded-sm mb-4">
@@ -57,7 +79,7 @@ const Stepthree = () => {
     <div>$1/mo</div>
   </div>
   <div className="flex items-center justify-center border-l border-t border-b border-blue-900 rounded-sm mb-4">
-    <input type="checkbox" className="mr-2" />
+    <input type="checkbox" className="mr-2"   onChange={handleAddlsChange} />
    
   </div>
   <div className="flex items-center justify-center  border-t border-b border-blue-900 rounded-sm mb-4">
@@ -70,7 +92,7 @@ const Stepthree = () => {
     <div>$2/mo</div>
   </div>
   <div className="flex items-center justify-center border-l border-t border-b border-blue-900 rounded-sm">
-    <input type="checkbox" className="mr-2" />
+    <input type="checkbox" className="mr-2" onChange={handleAddcpChange} />
     
   </div>
   <div className="flex items-center justify-center  border-t border-b border-blue-900 rounded-sm ">
@@ -83,7 +105,7 @@ const Stepthree = () => {
     <div>$2/mo</div>
   </div>
 </div>
-
+{/* <button onClick={setData3} className='bg-blue-800 rounded-full py-2 px-4 text-white  mt-6'>Confirm</button> */}
     </div>
 
    
