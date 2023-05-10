@@ -2,6 +2,8 @@ import React from 'react'
 import sideBar from '../images/bg-sidebar-desktop.svg';
 
 const Stepone = ({formData, setFormData}) => {
+
+  
   return (
     <div className='grid grid-cols-2 '>
       <div className='relative grid grid-cols-1'>
