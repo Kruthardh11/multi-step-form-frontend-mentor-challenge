@@ -83,7 +83,7 @@ const Stepfour = ({formData ,setFormData}) => {
     <div>
         <p className='pt-[5%] font-ubuntu font-bold text-[25px] mb-[1%] text-gray-800'>Finishing Up</p>
         <p className='font-medium text-gray-400 mb-[10%]'>Double check everything looks OK before confirming</p>
-        <div className='bg-blue-100 p-[5%]'>
+        <div className='bg-  -100 p-[5%]'>
           <div className='grid grid-cols-2  border-b border-gray-400'>
             <div>
               <p className='pt-[5%] font-ubuntu font-bold text-[20px] mb-[1%] text-blue-900'> {planText} </p>
@@ -92,8 +92,9 @@ const Stepfour = ({formData ,setFormData}) => {
               <p className='pt-[5%] ml-[30%] font-ubuntu font-bold text-[20px] mb-[1%] text-blue-900'>{costText}</p>
             </div>
       </div>
-      {showOnlineServices && <div>
-        <p className='font-ubuntu-medium text-blue-900'>Online Services</p>
+      {showOnlineServices && <div className='grid grid-cols-2'>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%]'>Online Services</p>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%] ml-[30%]'>+${addosValue}/mo</p>
         </div>}
       {showLocalStorage && <p>Local Storage</p>}
       {showCustomizableProfile && <p>Customizable Profile</p>}
