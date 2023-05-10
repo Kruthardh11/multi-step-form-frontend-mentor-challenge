@@ -140,7 +140,7 @@ const Steptwo = ({formData, setFormData}) => {
         Yearly
         </div>
         </div>
-        <button onClick={setData2} className='bg-blue-800 rounded-full py-2 px-4 text-white mt-5'>Confirm</button>
+        <button onClick={setData2} className="bg-blue-800 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Confirm</button>
     </div>
     </div>
   )
