@@ -6,6 +6,7 @@ const Stepfour = ({formData ,setFormData}) => {
 
   let planText = "";
   let costText = "";
+  let totalText = "per month";
   const plan = parseInt(formData.plan);
   if (plan === 9) {
     planText = "Arcade (monthly) ";
@@ -45,7 +46,22 @@ const Stepfour = ({formData ,setFormData}) => {
   }
   const showCustomizableProfile = addcpValue !== 0;
 
+  if(plan=='90' || plan == '120' || plan == '150'){
+    addosValue = addosValue*10;
+    addlsValue = addlsValue*10;
+    addcpValue = addcpValue*10;
+    totalText = "per year";
+  }
+
+  const addosText = addosValue === 1 ? "month" : addosValue === 10 ? "year" : "";
+  const addlsText = addlsValue === 2 ? "month" : addlsValue === 20 ? "year" : "";
+  const addcpText = addcpValue === 2 ? "month" : addcpValue === 20 ? "year" : "";
+
+
   const total = plan + addosValue + addcpValue + addlsValue;
+
+  console.log(addcpText);
+
 
   return (
     <div className='grid grid-cols-2'>
@@ -83,7 +99,7 @@ const Stepfour = ({formData ,setFormData}) => {
     <div>
         <p className='pt-[5%] font-ubuntu font-bold text-[25px] mb-[1%] text-gray-800'>Finishing Up</p>
         <p className='font-medium text-gray-400 mb-[10%]'>Double check everything looks OK before confirming</p>
-        <div className='bg-  -100 p-[5%]'>
+        <div className='bg-blue-100 p-[5%]'>
           <div className='grid grid-cols-2  border-b border-gray-400'>
             <div>
               <p className='pt-[5%] font-ubuntu font-bold text-[20px] mb-[1%] text-blue-900'> {planText} </p>
@@ -94,17 +110,25 @@ const Stepfour = ({formData ,setFormData}) => {
       </div>
       {showOnlineServices && <div className='grid grid-cols-2'>
         <p className='font-ubuntu-medium text-gray-400 mt-[5%]'>Online Services</p>
-        <p className='font-ubuntu-medium text-gray-400 mt-[5%] ml-[30%]'>+${addosValue}/mo</p>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%] ml-[30%]'>+${addosValue}/{addosText}</p>
         </div>}
-      {showLocalStorage && <p>Local Storage</p>}
-      {showCustomizableProfile && <p>Customizable Profile</p>}
-      <p>Total: {total}</p>
+      {showLocalStorage && <div className='grid grid-cols-2'>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%]'>Local Storage</p>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%] ml-[30%]'>+${addlsValue}/{addlsText}</p>
+        <p></p>
+      </div>}
+      {showCustomizableProfile && <div className='grid grid-cols-2'>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%]'>Customizable Profile</p>
+        <p className='font-ubuntu-medium text-gray-400 mt-[5%] ml-[30%]'>+${addcpValue}/{addcpText}</p>
+      </div>}
+      <div className='grid grid-cols-2'>
+      <p className='mt-10 font-ubuntu-medium text-gray-400'>Total/({totalText}):</p>
+      <p className='mt-10 ml-20 font-ubuntu-medium text-gray-400'>${total} {totalText}</p>
+      </div>
+      
     </div>
-        
             
     </div>
-
-   
     </div>
 
   )
